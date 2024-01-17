@@ -26,6 +26,10 @@ body {
   font-size: 16px;
 }
 
+.highlight {
+  text-decoration: underline;
+}
+
 .resume {
   width: 800px;
   height: auto;
@@ -160,13 +164,13 @@ body {
 }
 
 .resume .resume_right ul li .date {
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 100px;
+  margin-bottom: 10px;
 }
 
 .resume .resume_right ul li .info {
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 
 .resume .resume_right ul li:last-child .info {
