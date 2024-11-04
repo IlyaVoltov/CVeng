@@ -359,13 +359,13 @@
                         <li>
                             <span>Визуализация<br>данных</span>
                             <div class="sb-skeleton">
-                                <div class="skillbar" style="--pgbar-length: 70%"></div>
+                                <div class="skillbar" style="--pgbar-length: 75%"></div>
                             </div>
                         </li>
                         <li>
                             <span>Базы данных</span>
                             <div class="sb-skeleton">
-                                <div class="skillbar" style="--pgbar-length: 40%"></div>
+                                <div class="skillbar" style="--pgbar-length: 55%"></div>
                             </div>
                         </li>
                         <li>
@@ -461,6 +461,29 @@
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        const skillbars = document.querySelectorAll('.skillbar');
+
+        function animateSkillbar(skillbar) {
+            const length = skillbar.style.getPropertyValue('--pgbar-length');
+            skillbar.style.setProperty('width', length); // Заполнение до значения --pgbar-length
+        }
+
+        // Функция для проверки, когда элемент в зоне видимости
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillbar = entry.target;
+                    animateSkillbar(skillbar); // Заполнение
+                    observer.unobserve(skillbar); // Отключаем наблюдение после первой анимации
+                }
+            });
+        });
+
+        // Наблюдаем за каждым прогресс баром
+        skillbars.forEach(skillbar => {
+            observer.observe(skillbar); // Начинаем наблюдение
+        });
+
         // Modal opening and closing logic
         const modals = document.querySelectorAll('[data-modal]');
         const closeButtons = document.querySelectorAll('[data-close]');
@@ -491,35 +514,33 @@
                 const modal = this.closest('.modal');
                 if (modal) {
                     modal.style.display = 'none';
-                    location.reload(); // Обновляем страницу при закрытии модального окна
                 }
             });
         });
 
-        // Search logic
-        searchInput.addEventListener('input', function() {
-    const filter = this.value.toLowerCase();
-    const items = document.querySelectorAll('.modal-body ul > li'); // Указываем селектор для верхних li
+    // Search logic
+    searchInput.addEventListener('input', function() {
+        const filter = this.value.toLowerCase();
+        const items = document.querySelectorAll('.modal-body ul > li'); // Указываем селектор для верхних li
 
-    items.forEach(function(item) {
-        const sublist = item.querySelector('ul'); // Ищем вложенные ul
+        items.forEach(function(item) {
+            const sublist = item.querySelector('ul'); // Ищем вложенные ul
 
-        // Проверяем содержимое элемента и его id
-        if (item.textContent.toLowerCase().includes(filter) || item.id.toLowerCase().includes(filter)) {
-            item.style.display = ''; // Показываем элемент
-            if (sublist) {
-                sublist.style.display = ''; // Показываем вложенный список, если он есть
+            // Проверяем содержимое элемента и его id
+            if (item.textContent.toLowerCase().includes(filter) || item.id.toLowerCase().includes(filter)) {
+                item.style.display = ''; // Показываем элемент
+                if (sublist) {
+                    sublist.style.display = ''; // Показываем вложенный список, если он есть
+                }
+            } else {
+                item.style.display = 'none'; // Скрываем элемент
+                if (sublist) {
+                    sublist.style.display = 'none'; // Скрываем вложенный список
+                }
             }
-        } else {
-            item.style.display = 'none'; // Скрываем элемент
-            if (sublist) {
-                sublist.style.display = 'none'; // Скрываем вложенный список
-            }
-        }
+        });
     });
 });
-
-    });
 </script>
 
 </html>
