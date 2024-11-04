@@ -1,89 +1,142 @@
 /* Основные стили для верхней панели */
 .top-bar {
-    width: 100%;
-    background: rgba(72, 130, 191, 0.7); /* Полупрозрачный фон с цветом */
-    padding: 20px 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    max-width: 75%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 8px; /* Закругленные углы */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    position: sticky; /* Закрепляем наверху при прокрутке */
-    top: 0; /* Когда скроллим, панель "прилипает" к верху */
-      z-index: 10;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(72, 130, 191, 0.8), rgba(50, 80, 150, 0.7)); /* Градиентный фон */
+  padding: 20px 40px; /* Увеличенные отступы */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Более выраженная тень */
+  margin: 0 auto;
+  max-width: 75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px; /* Закругленные углы */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: sticky; /* Закрепляем наверху при прокрутке */
+  top: 0; /* Когда скроллим, панель "прилипает" к верху */
+  z-index: 10;
+}
+
+/* Навигационное меню */
+.nav-menu {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center; /* Центрирование элементов по вертикали */
+}
+
+.nav-menu img {
+  width: 60px; /* Увеличиваем размер изображения */
+  height: 60px;
+  margin-right: 20px; /* Увеличиваем отступ от изображения до меню */
+}
+
+/* Стили для горизонтального меню */
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Используем flex для горизонтального отображения */
+  justify-content: flex-end; /* Выровнять элементы в конце */
+  align-items: center; /* Центрирование элементов по вертикали */
+}
+
+/* Элементы списка */
+.nav-menu li {
+  margin-left: 30px; /* Увеличиваем пространство между элементами списка */
+}
+
+/* Стили ссылок в меню */
+.nav-menu a {
+  text-decoration: none;
+  color: #fff; /* Белый цвет текста */
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 20px; /* Увеличиваем отступы */
+  background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон кнопок */
+  border-radius: 8px; /* Закругленные углы */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Анимация при наведении */
+.nav-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px); /* Плавное поднятие */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+  .top-bar {
+      padding: 15px; /* Уменьшаем отступы для мобильных устройств */
+      flex-direction: column; /* Изменяем направление на колонку */
+      align-items: center; /* Выровнять элементы */
+      position: relative; /* Убираем фиксацию для мобильных устройств */
+      top: auto; /* Отменяем фиксированную позицию */
   }
 
-  /* Навигационное меню */
   .nav-menu {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
+      justify-content: center; /* Центрируем меню на мобильных */
+      width: 100%; /* Задаем ширину 100% для меню */
+      margin-top: 10px; /* Добавляем пространство между панелью и меню */
   }
 
-  /* Стили для горизонтального меню */
+  .nav-menu img {
+      width: 50px; /* Уменьшаем размер изображения для мобильных */
+      height: 50px; /* Уменьшаем высоту изображения для мобильных */
+  }
+
   .nav-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Используем flex для горизонтального отображения */
-    justify-content: flex-end; /* Выровнять элементы в конце */
-    align-items: center; /* Центрирование элементов по вертикали */
+      flex-direction: column; /* Выстраиваем элементы в колонку для мобильных */
+      width: 100%; /* Устанавливаем ширину на 100% */
+      align-items: center; /* Выровнять элементы списка */
   }
 
-  /* Элементы списка */
   .nav-menu li {
-    margin-left: 20px; /* Пространство между элементами списка */
+    margin: 15px 0; /* Отступы сверху и снизу для каждого элемента */
   }
 
-  /* Стили ссылок в меню */
   .nav-menu a {
-    text-decoration: none;
-    color: #fff; /* Белый цвет текста */
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 10px 15px;
-    background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон кнопок */
-    border-radius: 5px; /* Закругленные углы */
-    transition: background-color 0.3s ease, transform 0.2s ease;
+      font-size: 0.9rem; /* Уменьшаем размер шрифта для мобильных */
+      padding: 10px 15px; /* Увеличиваем отступы */
+      width: 100%; /* Задаем ширину 100% для ссылок */
+      text-align: center; /* Центрируем текст */
+  }
+}
+
+@media (max-width: 1024px) and (max-height: 600px) {
+  .top-bar {
+      padding: 15px; /* Уменьшаем отступы для более узких экранов */
+      flex-direction: column; /* Изменяем направление на колонку */
+      align-items: center; /* Центрируем элементы */
+      position: relative; /* Убираем фиксацию для мобильных устройств */
+      top: auto; /* Отменяем фиксированную позицию */
   }
 
-  /* Анимация при наведении */
-  .nav-menu a:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    transform: translateY(-3px); /* Плавное поднятие */
+  .nav-menu {
+      justify-content: center; /* Центрируем меню */
+      width: 100%; /* Задаем ширину 100% для меню */
+      margin-top: 10px; /* Добавляем пространство между панелью и меню */
   }
 
-  /* Адаптивные стили для мобильных устройств */
-  @media (max-width: 768px) {
-    .top-bar {
-        padding: 10px;
-        flex-direction: column; /* Изменяем направление на колонку */
-        align-items: center; /* Выровнять элементы*/
-        position: relative; /* Убираем фиксацию для мобильных устройств */
-        top: auto; /* Отменяем фиксированную позицию */
-    }
-
-    .nav-menu {
-        justify-content: center; /* Центрируем меню на мобильных */
-        width: 100%; /* Задаем ширину 100% для меню */
-        margin-top: 10px; /* Добавляем пространство между панелью и меню */
-    }
-
-    .nav-menu ul {
-        flex-direction: column; /* Выстраиваем элементы в колонку для мобильных */
-        width: 100%; /* Устанавливаем ширину на 100% */
-        align-items: center; /* Выровнять элементы списка */
-    }
-
-    .nav-menu li {
-        margin: 10px 0; /* Отступы сверху и снизу для каждого элемента */
-    }
-
-    .nav-menu a {
-        font-size: 0.9rem; /* Уменьшаем размер шрифта для мобильных */
-        padding: 8px 12px; /* Уменьшаем отступы */
-    }
+  .nav-menu img {
+      width: 50px; /* Уменьшаем размер изображения для более узких экранов */
+      height: 50px; /* Уменьшаем высоту изображения для более узких экранов */
   }
+
+  .nav-menu ul {
+      flex-direction: column; /* Выстраиваем элементы в колонку */
+      width: 100%; /* Устанавливаем ширину на 100% */
+      align-items: center; /* Выровнять элементы списка */
+  }
+
+  .nav-menu li {
+      margin: 8px 0; /* Уменьшаем отступы между элементами */
+  }
+
+  .nav-menu a {
+      font-size: 0.85rem; /* Уменьшаем размер шрифта для более узких экранов */
+      padding: 6px 10px; /* Уменьшаем отступы */
+      width: 100%; /* Задаем ширину 100% для ссылок */
+      text-align: center; /* Центрируем текст */
+  }
+}
