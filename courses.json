@@ -1,0 +1,53 @@
+[
+    {
+        "category": "Coursera",
+        "courses": [
+            "Master of Applied Data Science",
+            "Google Project Management",
+            "Introduction to Data Analytics"
+        ]
+    },
+    {
+        "category": "Kaggle",
+        "courses": [
+            { "name": "Advanced SQL", "certificate": "certificates/AdvancedSQL.png" },
+            { "name": "Data Visualization", "certificate": "certificates/DV.png" },
+            { "name": "Data Cleaning", "certificate": "certificates/DataCleaning.png" },
+            { "name": "Python", "certificate": "certificates/Python.png" }
+        ]
+    },
+    {
+        "category": "DevOps",
+        "courses": [
+            {
+                "name": "DevOps инженер, Школа DevOps, Санкт-Петербург",
+                "certificate": "certificates/devOPS.png"
+            }
+        ]
+    },
+    {
+        "category": "Stepik",
+        "courses": [
+            { "name": "Introductory Econometrics: a Practical Approach", "certificate": "certificates/econom.pdf" },
+            { "name": "Основы поисковой оптимизации SEO. Факторы ранжирования сайтов", "certificate": "certificates/SEO.png" },
+            { "name": "Agile. Гибкие методологии управления проектами", "certificate": "certificates/Agile.png" },
+            { "name": "HTML CSS JS", "certificate": "certificates/HTMLCSSJS.png" },
+            { "name": "Data Марафон. SQL и Python для аналитиков данных", "certificate": "certificates/DataMar.png" },
+            "Поколение Python",
+            "Интерактивный тренажер по SQL"
+        ]
+    },
+    {
+        "category": "KARPOV.COURSES",
+        "courses": [
+            "Симулятор аналитика данных"
+        ]
+    },
+    {
+        "category": "Sololearn",
+        "courses": [
+            { "name": "HTML", "certificate": "certificates/HTML.jpg" },
+            { "name": "CSS", "certificate": "certificates/css.jpg" }
+        ]
+    }
+]
