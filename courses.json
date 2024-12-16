@@ -29,6 +29,7 @@
         "category": "Stepik",
         "courses": [
             { "name": "Introductory Econometrics: a Practical Approach", "certificate": "certificates/econom.pdf" },
+            { "name": "Программирование на Python", "certificate": "certificates/Python_pr_stepik.png" },
             { "name": "Основы поисковой оптимизации SEO. Факторы ранжирования сайтов", "certificate": "certificates/SEO.png" },
             { "name": "Agile. Гибкие методологии управления проектами", "certificate": "certificates/Agile.png" },
             { "name": "HTML CSS JS", "certificate": "certificates/HTMLCSSJS.png" },
