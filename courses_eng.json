@@ -49,6 +49,7 @@
         "category": "Sololearn",
         "courses": [
             { "name": "Python Developer", "certificate": "certificates/Python_Developer.jpg" },
+            { "name": "Coding for Data", "certificate": "certificates/coding_for_data.jpg" },
             { "name": "HTML", "certificate": "certificates/HTML.jpg" },
             { "name": "CSS", "certificate": "certificates/css.jpg" }
         ]

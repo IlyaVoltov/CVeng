@@ -49,6 +49,7 @@
         "category": "Sololearn",
         "courses": [
             { "name": "Разработчик на Python", "certificate": "certificates/Python_Developer.jpg" },
+            { "name": "Кодирование и работа с данными", "certificate": "certificates/coding_for_data.jpg" },
             { "name": "HTML", "certificate": "certificates/HTML.jpg" },
             { "name": "CSS", "certificate": "certificates/css.jpg" }
         ]
