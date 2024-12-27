@@ -2,10 +2,10 @@
 .top-bar {
   width: 100%;
   background: linear-gradient(135deg, rgba(72, 130, 191, 0.8), rgba(50, 80, 150, 0.7)); /* Градиентный фон */
-  padding: 20px 40px; /* Увеличенные отступы */
+  padding: 1rem 2rem; /* Используем rem для универсальных отступов */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Более выраженная тень */
   margin: 0 auto;
-  max-width: 75%;
+  max-width: 74%; /* Ширина ограничена для больших экранов */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,14 +20,15 @@
 .nav-menu {
   display: flex;
   justify-content: flex-end;
-  width: 100%;
   align-items: center; /* Центрирование элементов по вертикали */
+  width: 100%;
+  flex-wrap: wrap; /* Автоматический перенос для узких экранов */
 }
 
 .nav-menu img {
-  width: 60px; /* Увеличиваем размер изображения */
-  height: 60px;
-  margin-right: 20px; /* Увеличиваем отступ от изображения до меню */
+  width: 4rem; /* Пропорциональный размер изображения */
+  height: 4rem;
+  margin-right: 1rem; /* Используем относительный отступ */
 }
 
 /* Стили для горизонтального меню */
@@ -38,11 +39,12 @@
   display: flex; /* Используем flex для горизонтального отображения */
   justify-content: flex-end; /* Выровнять элементы в конце */
   align-items: center; /* Центрирование элементов по вертикали */
+  flex-wrap: wrap; /* Позволяем перенос для адаптации */
 }
 
 /* Элементы списка */
 .nav-menu li {
-  margin-left: 30px; /* Увеличиваем пространство между элементами списка */
+  margin-left: 1.5rem; /* Пространство между элементами списка */
 }
 
 /* Стили ссылок в меню */
@@ -51,7 +53,7 @@
   color: #fff; /* Белый цвет текста */
   font-weight: 600;
   font-size: 1rem;
-  padding: 12px 20px; /* Увеличиваем отступы */
+  padding: 0.75rem 1.25rem; /* Универсальные отступы */
   background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон кнопок */
   border-radius: 8px; /* Закругленные углы */
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
@@ -64,79 +66,55 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень при наведении */
 }
 
-/* Адаптивные стили для мобильных устройств */
-@media (max-width: 768px) {
+/* Адаптивные стили для мобильных устройств и узких экранов */
+@media (max-width: 1024px), (max-height: 600px) {
   .top-bar {
-      padding: 15px; /* Уменьшаем отступы для мобильных устройств */
-      flex-direction: column; /* Изменяем направление на колонку */
-      align-items: center; /* Выровнять элементы */
-      position: relative; /* Убираем фиксацию для мобильных устройств */
-      top: auto; /* Отменяем фиксированную позицию */
+    padding: 1rem; /* Уменьшаем отступы для узких экранов */
+    flex-direction: column; /* Изменяем направление на колонку */
+    align-items: center;
+    max-width: 100%; /* Панель на всю ширину */
   }
 
   .nav-menu {
-      justify-content: center; /* Центрируем меню на мобильных */
-      width: 100%; /* Задаем ширину 100% для меню */
-      margin-top: 10px; /* Добавляем пространство между панелью и меню */
+    flex-direction: column; /* Элементы выстраиваются в колонку */
+    width: 100%;
+    justify-content: center; /* Центрируем меню */
+    margin-top: 1rem;
   }
 
   .nav-menu img {
-      width: 50px; /* Уменьшаем размер изображения для мобильных */
-      height: 50px; /* Уменьшаем высоту изображения для мобильных */
+    width: 3rem; /* Уменьшаем размер изображения для мобильных */
+    height: 3rem;
+    margin-right: 0; /* Убираем отступ */
+    margin-bottom: 0.5rem; /* Добавляем отступ снизу */
   }
 
   .nav-menu ul {
-      flex-direction: column; /* Выстраиваем элементы в колонку для мобильных */
-      width: 100%; /* Устанавливаем ширину на 100% */
-      align-items: center; /* Выровнять элементы списка */
+    flex-direction: column; /* Список элементов в колонку */
+    align-items: center;
   }
 
   .nav-menu li {
-    margin: 15px 0; /* Отступы сверху и снизу для каждого элемента */
+    margin: 0.5rem 0; /* Пространство между элементами */
   }
 
   .nav-menu a {
-      font-size: 0.9rem; /* Уменьшаем размер шрифта для мобильных */
-      padding: 10px 15px; /* Увеличиваем отступы */
-      width: 100%; /* Задаем ширину 100% для ссылок */
-      text-align: center; /* Центрируем текст */
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+    padding: 0.5rem 1rem; /* Компактные отступы */
+    width: 90%; /* Ссылки занимают почти всю ширину */
+    text-align: center;
   }
 }
 
-@media (max-width: 1024px) and (max-height: 600px) {
+/* Поддержка для экранов с экзотическими пропорциями (например, очень широких или узких) */
+@media (max-width: 480px), (max-height: 480px) {
   .top-bar {
-      padding: 15px; /* Уменьшаем отступы для более узких экранов */
-      flex-direction: column; /* Изменяем направление на колонку */
-      align-items: center; /* Центрируем элементы */
-      position: relative; /* Убираем фиксацию для мобильных устройств */
-      top: auto; /* Отменяем фиксированную позицию */
-  }
-
-  .nav-menu {
-      justify-content: center; /* Центрируем меню */
-      width: 100%; /* Задаем ширину 100% для меню */
-      margin-top: 10px; /* Добавляем пространство между панелью и меню */
-  }
-
-  .nav-menu img {
-      width: 50px; /* Уменьшаем размер изображения для более узких экранов */
-      height: 50px; /* Уменьшаем высоту изображения для более узких экранов */
-  }
-
-  .nav-menu ul {
-      flex-direction: column; /* Выстраиваем элементы в колонку */
-      width: 100%; /* Устанавливаем ширину на 100% */
-      align-items: center; /* Выровнять элементы списка */
-  }
-
-  .nav-menu li {
-      margin: 8px 0; /* Уменьшаем отступы между элементами */
+    padding: 0.5rem; /* Минимальные отступы */
+    border-radius: 0; /* Убираем закругления для экономии места */
   }
 
   .nav-menu a {
-      font-size: 0.85rem; /* Уменьшаем размер шрифта для более узких экранов */
-      padding: 6px 10px; /* Уменьшаем отступы */
-      width: 100%; /* Задаем ширину 100% для ссылок */
-      text-align: center; /* Центрируем текст */
+    font-size: 0.8rem; /* Ещё меньше шрифт */
+    padding: 0.4rem 0.8rem;
   }
 }

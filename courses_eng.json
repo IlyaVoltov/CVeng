@@ -35,6 +35,7 @@
             { "name": "HTML CSS JS", "certificate": "certificates/HTMLCSSJS.png" },
             { "name": "Data Marathon. SQL and Python for Data Analysts", "certificate": "certificates/DataMar.png" },
             { "name": "Big Data and Data Science: take it to next level", "certificate": "certificates/BD_and_DS.png" },
+            { "name": "Basics of statistics", "certificate": "certificates/basics_stat.png" },
             "Python Generation",
             "Interactive SQL Simulator"
         ]
@@ -51,7 +52,8 @@
             { "name": "Python Developer", "certificate": "certificates/Python_Developer.jpg" },
             { "name": "Coding for Data", "certificate": "certificates/coding_for_data.jpg" },
             { "name": "HTML", "certificate": "certificates/HTML.jpg" },
-            { "name": "CSS", "certificate": "certificates/css.jpg" }
+            { "name": "CSS", "certificate": "certificates/css.jpg" },
+            { "name": "Introduction to Python", "certificate": "certificates/intr_python.jpg" }
         ]
     }
 ]

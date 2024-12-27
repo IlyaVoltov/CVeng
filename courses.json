@@ -35,6 +35,7 @@
             { "name": "HTML CSS JS", "certificate": "certificates/HTMLCSSJS.png" },
             { "name": "Big Data and Data Science: переход на следующий уровень", "certificate": "certificates/BD_and_DS.png" },
             { "name": "Data Марафон. SQL и Python для аналитиков данных", "certificate": "certificates/DataMar.png" },
+            { "name": "Основы статистики", "certificate": "certificates/basics_stat.png" },
             "Поколение Python",
             "Интерактивный тренажер по SQL"
         ]
@@ -51,7 +52,8 @@
             { "name": "Разработчик на Python", "certificate": "certificates/Python_Developer.jpg" },
             { "name": "Кодирование и работа с данными", "certificate": "certificates/coding_for_data.jpg" },
             { "name": "HTML", "certificate": "certificates/HTML.jpg" },
-            { "name": "CSS", "certificate": "certificates/css.jpg" }
+            { "name": "CSS", "certificate": "certificates/css.jpg" },
+            { "name": "Введение в Python", "certificate": "certificates/intr_python.jpg" }
         ]
     }
 ]

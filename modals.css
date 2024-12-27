@@ -10,7 +10,7 @@
     background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный затемнённый фон */
     justify-content: center;
     align-items: center;
-    overflow: auto;
+    overflow-y: auto; /* Вертикальная прокрутка */
     padding: 20px;
     box-sizing: border-box;
 }
@@ -42,6 +42,27 @@
     line-height: 1.5;
     color: #333;
     margin-bottom: 20px;
+    max-height: 600px; /* Ограничиваем высоту содержимого */
+    overflow-y: auto; /* Включаем прокрутку */
+}
+
+/* Стилизация полосы прокрутки */
+.modal-body::-webkit-scrollbar {
+    width: 8px; /* Ширина полосы прокрутки */
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Цвет трека */
+    border-radius: 8px; /* Закругленные края */
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #888; /* Цвет бегунка */
+    border-radius: 8px; /* Закругленные края бегунка */
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Цвет бегунка при наведении */
 }
 
 /* Список внутри модального окна */
@@ -66,12 +87,14 @@
     position: absolute;
     top: 10px;
     right: 10px;
+    transition: background-color 0.3s;
 }
 
 .close-btn:hover {
     background-color: #366a94;
 }
 
+/* Поле поиска в модальном окне */
 #searchInput {
     width: 35%;
     padding: 10px 20px;
@@ -81,9 +104,9 @@
     position: absolute;
     top: 10px;
     left: 10px;
-  }
+}
 
-  #searchInput:focus {
+#searchInput:focus {
     outline: none;
 }
 
